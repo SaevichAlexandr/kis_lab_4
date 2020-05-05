@@ -1,3 +1,71 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+GetLuckyNumber:
+  path:       /lucky/number/{max}
+  controller: App\Controller\LuckyController::number
+  methods:    GET
+
+GetTariff:
+  path:       /tariff/{tariffId}
+  controller: App\Controller\TariffController::getTariff
+  methods:    GET
+  requirements:
+    id: '\d+'
+
+CreateTariff:
+  path:       /tariff
+  controller: App\Controller\TariffController::createTariff
+  methods:    POST
+
+UpdateTariff:
+  path:       /tariff/{tariffId}
+  controller: App\Controller\TariffController::updateTariff
+  methods:    PATCH
+  requirements:
+    id: '\d+'
+
+DeleteTariff:
+  path:       /tariff/{tariffId}
+  controller: App\Controller\TariffController::deleteTariff
+  methods:    DELETE
+  requirements:
+    id: '\d+'
+
+GetFlights:
+  path:       /flights
+  controller: App\Controller\FlightController::getFlights
+  methods:    GET
+
+GetFlight:
+  path:       /flight/{flightId}
+  controller: App\Controller\FlightController::getFlight
+  methods:    POST
+  requirements:
+    id: '\d+'
+
+CreateFlight:
+  path:       /flight
+  controller: App\Controller\FlightController::createFlight
+  methods:    POST
+
+UpdateFlight:
+  path:       /flight/{flightId}
+  controller: App\Controller\FlightController::updateFlight
+  methods:    PATCH
+  requirements:
+    id: '\d+'
+
+DeleteFlight:
+  path:       /flight/{flightId}
+  controller: App\Controller\FlightController::updateFlight
+  methods:    DELETE
+  requirements:
+    id: '\d+'
+
+GetFlightTariffs:
+  path:       /flight/{flightId}/tariffs
+  controller: App\Controller\FlightController::getFlightTariffs
+  methods:    GET
+  requirements:
+    id: '\d+'
