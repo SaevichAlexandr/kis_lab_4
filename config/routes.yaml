@@ -11,7 +11,7 @@ GetTariff:
   controller: App\Controller\TariffController::getTariff
   methods:    GET
   requirements:
-    id: '\d+'
+    tariffId: '\d+'
 
 CreateTariff:
   path:       /tariff
@@ -23,14 +23,14 @@ UpdateTariff:
   controller: App\Controller\TariffController::updateTariff
   methods:    PATCH
   requirements:
-    id: '\d+'
+    tariffId: '\d+'
 
 DeleteTariff:
   path:       /tariff/{tariffId}
   controller: App\Controller\TariffController::deleteTariff
   methods:    DELETE
   requirements:
-    id: '\d+'
+    tariffId: '\d+'
 
 GetFlights:
   path:       /flights
@@ -42,7 +42,7 @@ GetFlight:
   controller: App\Controller\FlightController::getFlight
   methods:    GET
   requirements:
-    id: '\d+'
+    flightId: '\d+'
 
 CreateFlight:
   path:       /flight
@@ -54,18 +54,23 @@ UpdateFlight:
   controller: App\Controller\FlightController::updateFlight
   methods:    PATCH
   requirements:
-    id: '\d+'
+    flightId: '\d+'
 
 DeleteFlight:
   path:       /flight/{flightId}
   controller: App\Controller\FlightController::deleteFlight
   methods:    DELETE
   requirements:
-    id: '\d+'
+    flightId: '\d+'
 
 GetFlightTariffs:
   path:       /flight/{flightId}/tariffs
   controller: App\Controller\FlightController::getFlightTariffs
   methods:    GET
   requirements:
-    id: '\d+'
+    flightId: '\d+'
+
+GetToken:
+  path:       /auth
+  controller: App\Controller\AuthController::getToken
+  methods:    POST
