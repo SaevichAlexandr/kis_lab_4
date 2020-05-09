@@ -40,7 +40,7 @@ GetFlights:
 GetFlight:
   path:       /flight/{flightId}
   controller: App\Controller\FlightController::getFlight
-  methods:    POST
+  methods:    GET
   requirements:
     id: '\d+'
 
@@ -58,7 +58,7 @@ UpdateFlight:
 
 DeleteFlight:
   path:       /flight/{flightId}
-  controller: App\Controller\FlightController::updateFlight
+  controller: App\Controller\FlightController::deleteFlight
   methods:    DELETE
   requirements:
     id: '\d+'
